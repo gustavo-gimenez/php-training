@@ -21,5 +21,8 @@ echo "Promedio: $promedio";
 
 //Short form
 echo array_search($needed, $elements);
+
+//How can I take element needed from url params
+
 ?>
 
