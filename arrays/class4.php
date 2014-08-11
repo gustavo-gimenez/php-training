@@ -32,4 +32,6 @@ echo array_search($needed, $elements);
  */
 $needed = isset($_GET['needed']) ? $_GET['needed']: '2014';
 
-echo array_search($needed, $elements);
+echo 'La posicion del objeto: '.$needed.' es : ';
+$found = array_search($needed, $elements);
+echo $found !== FALSE ? $found : 'Objeto no Encontrado';
