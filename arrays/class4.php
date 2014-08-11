@@ -24,5 +24,12 @@ echo array_search($needed, $elements);
 
 //How can I take element needed from url params
 
-?>
+/**
+ * In this we're using ternary operator (condition ? action1: action2;)
+ * Ej: if browser send query string as localhost/index.php?needed=info, then
+ * $_GET = array('needed' => 'info'), so then $needed = 'info'. If index 'needed'
+ * does no exist then $needed = '2014'
+ */
+$needed = isset($_GET['needed']) ? $_GET['needed']: '2014';
 
+echo array_search($needed, $elements);
