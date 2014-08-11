@@ -18,5 +18,8 @@ for ($index1 = 0; $index1 < count($elements); $index1++) {
 $promedio = $acum /  count($elements);
 
 echo "Promedio: $promedio";
+
+//Short form
+echo array_search($needed, $elements);
 ?>
 
