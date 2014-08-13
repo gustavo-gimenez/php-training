@@ -1,4 +1,15 @@
 <?php
+//fibonacci
+   $last = 1;
+   $beforeLast = 1;
+   $limit = 10;
+   
+   for($i = 0; $i < $limit; $i++){
+       $next = $last + $beforeLast;
+       echo $next;
+       $beforeLast = $last;
+       $last = $next;
+   }
 
 $elements = array('info', 41, 19, '2014', 'da');
 $needed = '2014';
@@ -36,4 +47,12 @@ echo 'La posicion del objeto: '.$needed.' es : ';
 $found = array_search($needed, $elements);
 echo $found !== FALSE ? $found : 'Objeto no Encontrado';
 
-?>
+
+//defining multidimenasional
+
+$mArray = array('key1' => array(), 'key2' => array()); 
+//if I want load an element to key2
+
+$mArray['key2'][] = 'element1';
+
+//then $mArray is array('key1' => array(), 'key2' => array('element1'));
