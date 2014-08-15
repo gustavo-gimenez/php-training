@@ -4,28 +4,28 @@ $(function () {
             type: 'bar'
         },
         title: {
-            text: 'Fruit Consumption'
+            text: 'Frutas mas consumidas'
         },
         xAxis: {
             categories: data.bar.categories
         },
         yAxis: {
             title: {
-                text: 'Fruit eaten'
+                text: 'Frutas Comidas'
             }
         },
         series: [{
-            name: 'Jane',
-            data: [1, 10, 4]
+            name: data.bar.series[0].name,
+            data: data.bar.series[0].data
         }, {
-            name: 'John',
-            data: [5, 7, 3]
+            name: data.bar.series[1].name,
+            data: data.bar.series[1].data
         }]
     });
     
     $('#stat2').highcharts({
         title: {
-            text: 'Monthly Average Temperature',
+            text: 'Promedio de Temperatura Mensual',
             x: -20 //center
         },
         subtitle: {

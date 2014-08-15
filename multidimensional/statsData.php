@@ -4,10 +4,10 @@
 
                 //Bar
                 $data['bar'] = array(
-                    'categories' => array('Apples', 'Bananas', 'Oranges'),
+                    'categories' => array('Manzana', 'Bananas', 'Naranjas'),
                     'series' => array(
-                        array('name' => 'Jane', 'data' => array(1, 10, 4)),
-                        array('name' => 'Jonh', 'data' => array(5, 7, 3))
+                        array('name' => 'Lorra', 'data' => array(10, 50, 21)),
+                        array('name' => 'Cosito', 'data' => array(20, 32, 15))
                     )
                 );
                 echo json_encode($data);
