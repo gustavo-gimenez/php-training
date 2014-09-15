@@ -17,7 +17,7 @@
     text-shadow: 0px 0px rgba(255, 255, 255, 0.57);
 }
 
-#nameal, #passal {
+ #nameal, #passal {
     margin: 0 37px;
     color: rgba(68, 68, 68, 0.78);
     display: none;
@@ -48,7 +48,7 @@
     font-size: 14px;
 }
 
-#name {
+input  {
     -moz-appearance: none;
     -webkit-appearance: none;
     padding: 0 8px;
@@ -73,7 +73,11 @@
     font-size: 16px;
     text-align: left;
 }
-
+input.inline-input {
+    width: 250px;
+    margin: auto;
+    display: inline-block;
+}
 #pass {
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -120,7 +124,7 @@
     font-size: 22px;
 }
 
-#signupb {
+button, #signupb {
     background: #f8f8f8;
     border: 1px solid #c6c6c6;
     display: inline-block;
@@ -142,7 +146,10 @@
     outline: none;
     cursor: pointer;
 }
-
+button.inline-button {
+    position: relative;
+    float: right;
+}
 #userbox {
     position: absolute;
     width: 480px;
@@ -637,4 +644,9 @@ body,input,select,td,textarea {
 
 #close {
     display: none;
+}
+.form-group {
+    margin: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
 }

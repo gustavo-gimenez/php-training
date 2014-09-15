@@ -19,4 +19,9 @@ $(function() {
             $this.css('background-color', '#FFFAAA');
         }
     });
+    $('form').submit(function(){
+        if (cond){
+           return false;
+        }
     });
+});

@@ -1,12 +1,11 @@
 <?php
 session_start();
 
-if(isset($_POST['name']) && isset($_POST['password'])) {
+if(isset($_POST['name']) && isset($_POST['password']) && !empty($_POST['name'])) {
   $_SESSION['name'] = $_POST['name'];
   $_SESSION['pass'] = $_POST['password'];
-  echo 'Estas logueado';
+  Header('Location: todo.php');
 } else {
-  echo 'Error wrong name/pass';
+  Header('Location: index.php?error=login');
 }
-if (!empty($_POST['name']))
 ?>
