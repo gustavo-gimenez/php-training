@@ -650,3 +650,13 @@ body,input,select,td,textarea {
     padding-left: 15px;
     padding-right: 15px;
 }
+.logout {
+   position: absolute;
+   right: 19px;
+   bottom: 19px;
+}
+.signup {
+   position: absolute;
+   right: 125px;
+   bottom: 19px;
+}

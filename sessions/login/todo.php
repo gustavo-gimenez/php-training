@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php session_start();?>
+<?php require 'datas.php'; ?>
 <head>
 
   <meta charset="UTF-8">
@@ -13,22 +14,23 @@
 </head>
 
 <body>
-    
 <?php if (isset($_SESSION['name']) && isset($_SESSION['pass'])):?>
 <div id="logmsk" style="display: block;">
     <div id="userbox">
         <h1 id="signup" style="background-color: rgb(118, 171, 219); background-position: initial initial; background-repeat: initial initial;">Todo list</h1>
-        <form action="login.php" method="POST" id="form-login">
+        <?php echo isset($_GET['error']) ? '<p>'.$_GET['error'].'</p>': ''?>
+        <form action="addTasks.php" method="POST" id="form-login">
             <div class="form-group">
               <input id="task" class="inline-input" name="task" placeholder="New Task" style="opacity: 1; background-color: rgb(255, 255, 255); background-position: initial initial; background-repeat: initial initial;">
-               <button class="inline-button">Add</button>
+              <button class="inline-button">Add</button>
             </div>
         </form>
         <ul>
-           <li>Vacation plan</li>
-           <li>Meeting client</li>
-           <li>Coding</li>
+          <?php foreach ($tasks as $task):?>
+             <li><?php echo $task['name'] ?></li>
+          <?php endforeach?>
         </ul>
+        <a href="logout.php" class="logout" >Logout</a>
     </div>
 </div>
 <?php else: ?>

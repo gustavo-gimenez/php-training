@@ -20,13 +20,14 @@
         <?php if (isset($_GET['error'])):?>
         <p> <?php echo $_GET['error'] ?></p>
         <?php endif?>
-        <h1 id="signup" style="background-color: rgb(118, 171, 219); background-position: initial initial; background-repeat: initial initial;">Login</h1>
-        <form action="login.php" method="POST" id="form-login">
+        <h1 id="signup" style="background-color: rgb(118, 171, 219); background-position: initial initial; background-repeat: initial initial;">Signup</h1>
+        <form action="signup.php" method="POST" id="form-login">
             <input id="name" name="name" placeholder="ID" style="opacity: 1; background-color: rgb(255, 255, 255); background-position: initial initial; background-repeat: initial initial;">
             <input id="pass" name="password" type="password" placeholder="Password" style="opacity: 1; background-color: rgb(255, 255, 255); background-position: initial initial; background-repeat: initial initial;">
-            <input type="submit" id="signupb" style="cursor: default; text-align: center" value="Login"/>
+            <input id="duplicated_pass" name="duplicated_password" type="password" placeholder="Confirm Password" style="opacity: 1; background-color: rgb(255, 255, 255); background-position: initial initial; background-repeat: initial initial;">
+            <input type="submit" id="signupb" style="cursor: default; text-align: center" value="Signup"/>
         </form>
-        <a href="register.php" class="signup">Signup</a>
+        <a href="index.php" class="signup">Login</a>
     </div>
 </div>
 <?php else: ?>
