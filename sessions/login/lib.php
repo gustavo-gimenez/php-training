@@ -7,12 +7,12 @@
  */
 function connect()
 {
-    $connect = mysqli_connect('localhost', 'info', 'Pa$$w0rd', 'users_tasks');
-    if ($connect) {
-        return $connect;
-    } else {
-        throw new Exception('Error al conectar a la BD');
+    $connect = mysqli_connect('localhost', 'info', 'Pa$$w0rd', 'uusers_tasks');
+    if (!$connect) {
+        throw new Exception('Error trying to conect to DB: ' . mysqli_connect_error());
     }
+    
+    return $connect;
 }
 
 /**
@@ -27,10 +27,10 @@ function getUser($name)
     try {
         $link = connect();
         $result = mysqli_query($link, 'SELECT * FROM users WHERE name="' . $name . '"');
-
+        
         return mysqli_fetch_assoc($result);
     } catch (Exception $exc) {
-        file_put_contents('logs/log.txt', $exc->getMessage());
+        logger($exc->getMessage());
         throw $exc;
     }
 }
@@ -76,4 +76,12 @@ function addUser($name, $pass)
     $result = mysqli_query($link, 'INSERT INTO users (name, password) VALUES ("' . $name . '", "' . $pass . '")');
 }
 
+/**
+ * 
+ * @param type $msg
+ */
+function logger($msg)
+{
+    file_put_contents('logs/log.txt', $msg . "\n", FILE_APPEND);
+}
 ?>
