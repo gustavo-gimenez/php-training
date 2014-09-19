@@ -660,3 +660,15 @@ body,input,select,td,textarea {
    right: 125px;
    bottom: 19px;
 }
+.action-task {
+  background-image: url(images/xs-editing-delete-icon-dis.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+  background-position: center;
+}
+.action-task:hover{
+  background-image: url(images/xs-editing-delete-icon.png);
+}

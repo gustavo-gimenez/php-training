@@ -7,7 +7,7 @@
  */
 function connect()
 {
-    $connect = mysqli_connect('localhost', 'info', 'Pa$$w0rd', 'uusers_tasks');
+    $connect = mysqli_connect('localhost', 'info', 'Pa$$w0rd', 'users_tasks');
     if (!$connect) {
         throw new Exception('Error trying to conect to DB: ' . mysqli_connect_error());
     }
@@ -83,5 +83,13 @@ function addUser($name, $pass)
 function logger($msg)
 {
     file_put_contents('logs/log.txt', $msg . "\n", FILE_APPEND);
+}
+
+function deleteTask($id)
+{
+    $link = connect();
+    $resutl = mysqli_query($link, 'DELETE FROM tasks WHERE taskid=' . $id);
+    
+    return $resutl;
 }
 ?>

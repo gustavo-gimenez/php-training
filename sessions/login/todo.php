@@ -27,7 +27,7 @@
         </form>
         <ul>
           <?php foreach ($tasks as $task):?>
-             <li><?php echo $task['name'] ?></li>
+            <li><?php echo $task['name'] ?> <a href="delete.php?task=<?php echo $task['taskid']?>" class="action-task"></a></li>
           <?php endforeach?>
         </ul>
         <a href="logout.php" class="logout" >Logout</a>
