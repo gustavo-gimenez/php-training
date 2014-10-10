@@ -92,4 +92,13 @@ function deleteTask($id)
     
     return $resutl;
 }
+
+function updateBlocked($username)
+{
+    $user = getUser($username);
+    $link = connect();
+    $resutl = mysqli_query($link, 'UPDATE users SET Blocked = TRUE WHERE user_id='.$user['user_id'] );
+    
+    return $resutl;
+}
 ?>
