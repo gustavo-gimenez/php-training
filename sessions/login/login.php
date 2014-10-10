@@ -4,7 +4,7 @@ session_start();
 require_once 'lib.php';
 //creo la cantidad de intentos o la actualiza la cantidad si ya esta creada
 if (!isset($_SESSION['cantidad'])) {
-    $_SESSION['cantidad'] = 1;
+    $_SESSION['cantidad'] = 0;
 }  else {
     $_SESSION['cantidad'] += 1;
 }
@@ -30,13 +30,13 @@ if ($_SESSION['cantidad']<= 3) {
                 }
 
         } catch (Exception $exc) {
-            logger("Error trying to get user: ". $exc->getMessage());
+            logger("Error trying to get user: ". $exc->getMessage())." van ".$_SESSION['cantidad']." errores de 3";
 
             header('Location: error.php');
         }
 
     } else {
-        Header("Location: index.php?error=campos vacio van ".$_SESSION['cantidad']." errores de 3");
+        Header("Location: index.php?error");
     }
 }  else {
     //si el hizo mas de 3 intentos bloquea al usuario y tira el mensaje avisando que intento muchas veces loguearse
