@@ -736,7 +736,14 @@ $birthdayUsers = $userCollection->matching($criteria);
     protected $assignedBugs = null;
                                         </code></pre>
 				</section>
-
+                                <section>
+                                <h3>Populating datas</h3>
+                                <p class="fragment">First paramter must be de Prvince name </p>
+                                <pre class="fragment"><code>php load_provinces.php Chaco Resisntencia SanMarting Fontanta</code></pre>
+                                <p class="fragment">If the province name already exists cities must be append to it</p>
+                                <p class="fragment">If the city already exist should not be insert again </p>
+                                <p class="fragment">Must print the province id, and the number of cities inserted to de DB</p>
+                                </section>
 				<section>
 				    <h3 class="transform-text">Doctrine Query Languagge - DQL</h3>
 				    <p>Give us querying capabilities over the object model</p>
