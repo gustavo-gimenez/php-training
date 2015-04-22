@@ -7,7 +7,11 @@
  */
 function connect()
 {
+<<<<<<< HEAD
     $connect = mysqli_connect('localhost', 'root', 'Pa$$w0rd', 'todo');
+=======
+    $connect = mysqli_connect('localhost', 'info', 'Pa$$w0rd', 'todo2');
+>>>>>>> f60da4f8d435549b88a862e9591e566065391f51
     if (!$connect) {
         throw new Exception('Error trying to conect to DB: ' . mysqli_connect_error());
     }
@@ -92,6 +96,7 @@ function deleteTask($id)
     
     return $resutl;
 }
+<<<<<<< HEAD
 function blockUser($name)
 {
     $link = connect();
@@ -113,3 +118,20 @@ function guess($date)
   $interval = ($today - $date1) / 60;
   return $interval;
 }
+=======
+
+/**
+ * Bloquea el usuario
+ * @param type $username
+ * @return type
+ */
+function updateBlocked($username)
+{
+    $user = getUser($username);
+    $link = connect();
+    $resutl = mysqli_query($link, 'UPDATE users SET Blocked = TRUE WHERE user_id='.$user['user_id'] );
+    
+    return $resutl;
+}
+?>
+>>>>>>> f60da4f8d435549b88a862e9591e566065391f51
