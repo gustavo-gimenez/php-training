@@ -1,0 +1,17 @@
+{% extends "AcmeDemoBundle::layout.html.twig" %}
+
+{% block title "Symfony - Contact form" %}
+
+{% block content %}
+    <form action="{{ path('_demo_contact') }}" method="POST" id="contact_form">
+        {{ form_errors(form) }}
+
+        {{ form_row(form.email) }}
+        {{ form_row(form.message) }}
+
+        {{ form_rest(form) }}
+        <input type="submit" value="Send" class="symfony-button-grey" />
+        
+        <a href="{{ path('') }}">Contact</a> <a href="{{ path('_demo_login') }}">Go to the login page</a>
+    </form>
+{% endblock %}

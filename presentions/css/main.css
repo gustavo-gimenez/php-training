@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'bullets';
+    src: url("icons/fontello.eot");
+    src: url("icons/fontello.eot#iefix") format('embedded-opentype'), url("icons/fontello.woff") format('woff'), url("icons/fontello.ttf") format('truetype'), url("icons/fontello.svg#bullets") format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.requirement, .icon-doc {
+   text-align:left;
+}
+.requirement:before {
+      font-family: bullets;
+      content: "\e800";
+      float: left;
+      width: 1.4em;
+}
+.icon-doc:before {
+      font-family: bullets;
+      content: "\e802";
+      float: left;
+      width: 1.4em;
+}
+#window-joke:before{
+      font-family: bullets;
+      content: "\e803";
+      float: left;
+      width: 1.4em;
+}
+h3.transform-text{
+    text-transform: none;
+}
+.reveal pre code {
+    max-height: 630px;
+}

@@ -25,7 +25,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!--start-content------>
 			<div class="content">
 				<img src="css/images/error-img.png" title="error" />
-				<p><span><label>O</label>hh.....</span>There is something really wrong</p>
+                                <p><span><label>O</label>hh.....</span><?php echo (isset($_GET['error'])) ? $_GET['error']: 'Something is wrong' ?></p>
 				<a href="index.php">Back To Home</a>
 				<div class="copy-right">
 					<p>Todo list is powered by Informatorio 2014</p>

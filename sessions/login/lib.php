@@ -7,7 +7,7 @@
  */
 function connect()
 {
-    $connect = mysqli_connect('localhost', 'info', 'Pa$$w0rd', 'users_tasks');
+    $connect = mysqli_connect('localhost', 'root', 'Pa$$w0rd', 'todo');
     if (!$connect) {
         throw new Exception('Error trying to conect to DB: ' . mysqli_connect_error());
     }
@@ -44,7 +44,7 @@ function getTasks($username)
 {
     $user = getUser($username);
     $link = connect();
-    $result = mysqli_query($link, 'SELECT * FROM tasks WHERE user_id=' . $user['user_id']);
+    $result = mysqli_query($link, 'SELECT * FROM tasks WHERE user_id=' . $user['id']);
 
     return $result;
 }
@@ -59,7 +59,7 @@ function addTask($username, $name)
 {
     $user = getUser($username);
     $link = connect();
-    $result = mysqli_query($link, 'INSERT INTO tasks (user_id, name) VALUES (' . $user['user_id'] . ', "' . $name . '")');
+    $result = mysqli_query($link, 'INSERT INTO tasks (user_id, name) VALUES (' . $user['id'] . ', "' . $name . '")');
 
     return $result;
 }
@@ -88,8 +88,28 @@ function logger($msg)
 function deleteTask($id)
 {
     $link = connect();
-    $resutl = mysqli_query($link, 'DELETE FROM tasks WHERE taskid=' . $id);
+    $resutl = mysqli_query($link, 'DELETE FROM tasks WHERE id=' . $id);
     
     return $resutl;
 }
-?>
+function blockUser($name)
+{
+    $link = connect();
+    mysqli_query($link, 'UPDATE users SET blocked=1 
+          WHERE name = "' . $name . '"');
+}
+function unblockUser($id)
+{ 
+    $link = connect();
+    mysqli_query($link, 'UPDATE users SET blocked=0
+          WHERE id =' . $id);
+}
+function guess($date)
+{
+  $today = date_create('now');
+  $date1 = date_create($date);
+  $today = date_timestamp_get($today); //$today to seconds
+  $date1 = date_timestamp_get($date1); // $date1 to seconds
+  $interval = ($today - $date1) / 60;
+  return $interval;
+}

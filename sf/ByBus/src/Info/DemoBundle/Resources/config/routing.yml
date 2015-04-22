@@ -1,0 +1,6 @@
+info_demo_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: InfoDemoBundle:Default:index }
+info_demo_add:
+    path:     /record
+    defaults: { _controller: InfoDemoBundle:Default:record }
